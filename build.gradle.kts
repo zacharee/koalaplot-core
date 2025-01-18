@@ -6,8 +6,9 @@ plugins {
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.dokka)
+//    alias(libs.plugins.dokka)
     alias(libs.plugins.detekt)
+    alias(libs.plugins.maven.publish)
     id("convention.publication")
 }
 
@@ -21,7 +22,7 @@ dependencies {
     detektPlugins(libs.detekt.formatting)
 }
 
-group = "io.github.koalaplot"
+group = "dev.zwander.koalaplot"
 version = "0.9.0-dev"
 
 kotlin {
@@ -121,18 +122,18 @@ android {
     }
 }
 
-dokka {
-    moduleName.set("Koala Plot Core")
-
-    dokkaPublications.html {
-        outputDirectory.set(layout.buildDirectory.dir("docs/api/${project.version}"))
-    }
-
-    pluginsConfiguration.html {
-        customStyleSheets.from("src/docs/dokka/logo-styles.css")
-        customAssets.from("src/docs/assets/images/logo-icon.svg")
-    }
-}
+//dokka {
+//    moduleName.set("Koala Plot Core")
+//
+//    dokkaPublications.html {
+//        outputDirectory.set(layout.buildDirectory.dir("docs/api/${project.version}"))
+//    }
+//
+//    pluginsConfiguration.html {
+//        customStyleSheets.from("src/docs/dokka/logo-styles.css")
+//        customAssets.from("src/docs/assets/images/logo-icon.svg")
+//    }
+//}
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     detekt {
@@ -145,4 +146,8 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
 
 tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
     exclude("**/desktopTest/**")
+}
+
+mavenPublishing {
+    coordinates(artifactId = "koalaplot")
 }
