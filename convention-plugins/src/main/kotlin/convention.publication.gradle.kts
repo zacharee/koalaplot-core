@@ -31,9 +31,9 @@ if (secretPropsFile.exists()) {
     ext["sonatypeStagingProfileId"] = System.getenv("SONATYPE_STAGING_PROFILE_ID")
 }
 
-val javadocJar by tasks.registering(Jar::class) {
-    archiveClassifier.set("javadoc")
-}
+//val javadocJar by tasks.registering(Jar::class) {
+//    archiveClassifier.set("javadoc")
+//}
 
 fun getExtraString(name: String) = ext[name]?.toString()
 
@@ -62,7 +62,7 @@ tasks.withType<AbstractPublishToMaven>().configureEach {
 publishing {
     publications.withType<MavenPublication> {
         // Stub javadoc.jar artifact
-        artifact(javadocJar.get())
+//        artifact(javadocJar.get())
 
         // Provide artifacts information required by Maven Central
         pom {
