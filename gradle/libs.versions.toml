@@ -12,7 +12,7 @@ maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPubli
 
 [versions]
 
-agp = "8.7.2"
+agp = "8.7.3"
 ##⬆= "8.7.3"
 ##⬆= "8.8.0-alpha01"
 ##⬆= "8.8.0-alpha02"
@@ -37,7 +37,7 @@ agp = "8.7.2"
 ##⬆= "8.9.0-alpha08"
 ##⬆= "8.9.0-alpha09"
 
-compose-plugin = "1.8.0-alpha02"
+compose-plugin = "1.8.1"
 ##          ⬆ = "1.8.0+check"
 ##          ⬆ = "1.8.0+dev1922"
 ##          ⬆ = "1.8.0+dev1924"
@@ -87,7 +87,7 @@ compose-plugin = "1.8.0-alpha02"
 
 dokka = "2.0.0"
 
-kotlin = "2.1.0"
+kotlin = "2.1.20"
 ##  ⬆ = "2.1.10-RC"
 ##  ⬆ = "2.1.20-Beta1"
 
